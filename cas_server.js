@@ -1,6 +1,7 @@
 var Fiber = Npm.require('fibers');
 var url = Npm.require('url');
-var CAS = Npm.require('cas');
+//var CAS = Npm.require('cas');
+var CAS = Npm.require('xcas');
 
 var _casCredentialTokens = {};
 
@@ -63,14 +64,14 @@ var casTicket = function (req, token, callback) {
     service: Meteor.absoluteUrl() + "_cas/" + token
   });
 
-  cas.validate(ticketId, function(err, status, username, extra) {
+  cas.validate(ticketId, function(err, status, username, extended) {
     if (err) {
       console.log("accounts-cas: error when trying to validate " + err);
     } else {
       if (status) {
         console.log("accounts-cas: user validated " + username);
         console.log("accounts-cas: parsedUrl " + parsedUrl);
-        console.log("accounts-cas: extra " + extra);
+        console.log("accounts-cas: extended " + extended);
         _casCredentialTokens[token] = { id: username };
       } else {
         console.log("accounts-cas: unable to validate " + ticketId);
