@@ -1,7 +1,9 @@
-atoy40:accounts-cas
+neo-inuit:accounts-cas
 ===================
 
-CAS login support.
+Status : TEST
+
+CAS login support. Try to add extended attributes, based on xcas npm package
 
 ## Usage
 
