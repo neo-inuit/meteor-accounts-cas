@@ -1,8 +1,8 @@
 Package.describe({
-  summary: "CAS support for accounts",
-  version: "0.0.2",
-  name: "atoy40:accounts-cas",
-  git: "https://github.com/atoy40/meteor-accounts-cas"
+  summary: "CAS support for accounts with extended attributes",
+  version: "0.0.1",
+  name: "neo-inuit:accounts-cas",
+  git: "https://github.com/neo-inuit/meteor-accounts-cas"
 });
 
 Package.onUse(function(api) {
@@ -20,5 +20,5 @@ Package.onUse(function(api) {
 });
 
 Npm.depends({
-  cas: "0.0.3"
+  xcas: "0.1.0"
 });
